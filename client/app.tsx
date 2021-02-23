@@ -1,5 +1,4 @@
 import { React, ReactDOMServer, ObsidianWrapper } from '../deps.ts';
-// import Dashboard from './Components/Dashboard/Dashboard.tsx';
 import { CardsContainer } from './Components/Card_Components/CardsContainer.tsx';
 
 declare global {

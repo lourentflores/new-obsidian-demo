@@ -46,19 +46,16 @@ const Test = () => {
       cache.write(queryStr, updatedRespObj);
     }
   }
-  // const [, forceUpdate] = (React as any).useReducer((x: any) => x + 1, 0);
 
   async function handleClick() {
     const result = await query(queryStr);
     console.log('result from query', result);
-    // forceUpdate();
     setTimeout(() => setCache(new BrowserCache(cache.storage)), 1);
   }
   async function handleClick2() {
     const result = await mutate(mutationStr, { update: updateFunc });
     console.log('result from mutation', result);
     setTimeout(() => setCache(new BrowserCache(cache.storage)), 1);
-    // forceUpdate();
   }
   return (
     <div className="app">

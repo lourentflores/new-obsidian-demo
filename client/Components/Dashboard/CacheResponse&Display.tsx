@@ -1,7 +1,4 @@
 import { React, useObsidian, BrowserCache } from '../../../deps.ts';
-// import { useQueriesContext } from '../Card_Components/CardsContainer.tsx';
-// import reactBootstrap from 'https://cdn.skypack.dev/react-bootstrap';
-// import { Button } from 'https://cdn.skypack.dev/react-bootstrap';
 
 declare global {
   namespace JSX {
@@ -18,7 +15,7 @@ declare global {
 }
 
 const CacheResponseDisplay = (props: any) => {
-  // const { queryTime, gqlRequest, response } = useQueriesContext();
+ 
   const { cache, clearCache, setCache } = useObsidian();
   const { response } = props;
   function onClick(e: any) {

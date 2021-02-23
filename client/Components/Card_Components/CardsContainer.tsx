@@ -29,7 +29,7 @@ const useInput = (init: any) => {
   return [value, onChange];
 };
 
-function CardsContainer(props: any) {
+const CardsContainer = (props: any) => {
   const { query, mutate, cache, setCache, clearCache } = useObsidian();
   const [queryTime, setQueryTime] = (React as any).useState(0);
   const [gqlRequest, setGqlRequest] = (React as any).useState('');
@@ -139,11 +139,8 @@ function CardsContainer(props: any) {
     setQueryTime(Date.now() - start);
     setDisplay('');
     setResponse(res.data);
-    console.log('data', JSON.stringify(res));
-    console.log('response', response);
     setDisplay('all movies');
     setTimeout(() => setCache(new BrowserCache(cache.storage)), 1);
-    console.log('all movies', res);
   };
 
   const fetchAllActors = async (e: any) => {
@@ -155,7 +152,6 @@ function CardsContainer(props: any) {
     setResponse(res.data);
     setDisplay('all actors');
     setTimeout(() => setCache(new BrowserCache(cache.storage)), 1);
-    console.log('all actors', res);
   };
 
   const fetchMoviesByGenre = async (e: any) => {
@@ -167,7 +163,6 @@ function CardsContainer(props: any) {
     setResponse(res.data);
     setDisplay('by genre');
     setTimeout(() => setCache(new BrowserCache(cache.storage)), 1);
-    console.log('by genre', res);
   };
 
   const fetchReleaseYear = async (e: any) => {
@@ -179,7 +174,6 @@ function CardsContainer(props: any) {
     setResponse(res.data);
     setDisplay('by year');
     setTimeout(() => setCache(new BrowserCache(cache.storage)), 1);
-    console.log('by year', res);
   };
 
   const addMovieCard = async (e: any) => {
@@ -194,7 +188,6 @@ function CardsContainer(props: any) {
     setDisplay('all movies');
     setTimeout(() => setCache(new BrowserCache(cache.storage)), 1);
     await clearState();
-    console.log('add movie', res);
   };
 
   const addActorCard = async (e: any) => {
@@ -211,8 +204,6 @@ function CardsContainer(props: any) {
     setDisplay('all actors');
     setTimeout(() => setCache(new BrowserCache(cache.storage)), 1);
     await clearState();
-    console.log('add card', res);
-    console.log('cache', cache.storage);
   };
 
   return (
@@ -260,4 +251,4 @@ function CardsContainer(props: any) {
     </div>
   );
 }
-export { CardsContainer };
+export default CardsContainer;

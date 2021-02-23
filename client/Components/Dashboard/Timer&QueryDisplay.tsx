@@ -1,5 +1,4 @@
 import { React, useObsidian } from '../../../deps.ts';
-// import { useQueriesContext } from '../Card_Components/CardsContainer.tsx';
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -17,7 +16,7 @@ declare global {
 }
 
 const TimerQueryDisplay = (props: any) => {
-  // const { queryTime, gqlRequest, response } = useQueriesContext();
+  
   const { queryTime, gqlRequest } = props;
   const query = `query AllMoviesByDate {
     movies(sort: { release: ASC }) {
@@ -30,10 +29,7 @@ const TimerQueryDisplay = (props: any) => {
     }
   }
 `;
-  // const [queryTime, setQueryTime] = (React as any).useState(0);
-  // const start = Date.now();
-  // setQueryTime(Date.now() - start);
-  // id="stretchQuery"
+  
   return (
     <div className="timer-query">
       <div className="timer">

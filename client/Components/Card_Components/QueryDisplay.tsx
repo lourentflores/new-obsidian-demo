@@ -1,6 +1,4 @@
 import { React } from '../../../deps.ts';
-// import CardsContainer from './CardsContainer.tsx';
-
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -22,6 +20,8 @@ const QueryDisplay = (props: any) => {
     e.preventDefault();
   };
 
+  const { genre, setGenre } = props;
+
   return (
     <>
       <div className="query-display">
@@ -37,13 +37,11 @@ const QueryDisplay = (props: any) => {
         </button>
 
         <form onSubmit={handleSubmit}>
-          {/* <label id="genre-label">
-            Movies by Genre */}
           <div id="dropdown-content">
             <select
               id="genres"
-              value={props.genre}
-              onChange={props.setGenre}
+              value={genre}
+              onChange={setGenre}
               className="form-select"
               required
             >
@@ -56,7 +54,6 @@ const QueryDisplay = (props: any) => {
               <option value="ADVENTURE">ADVENTURE</option>
             </select>
           </div>
-          {/* </label> */}
           <input type="submit" value="Movies by Genre" />
         </form>
       </div>
